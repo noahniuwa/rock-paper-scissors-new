@@ -2,6 +2,9 @@ import React from 'react';
 import Score from './components/Score'
 import './App.css';
 import gameOutcome from './helpers/gameoutcome'
+import rockImg from './images/icon-rock.svg'
+import paperImg from './images/icon-paper.svg'
+import scissorsImg from './images/icon-scissors.svg'
 
 class App extends React.Component {
   constructor(props){
@@ -38,15 +41,18 @@ class App extends React.Component {
     return (
       <div className="App">
         <Score score={this.state.score} />
-  
-        <div onClick={this.playButtonHandler} className="btn" value={"rock"}>
-          Rock
+        <div className="row-one">
+          <div className="img-border paper">
+            <img onClick={this.playButtonHandler} className="btn" value={"paper"} src={paperImg} alt="paper"></img>
+          </div>
+          <div className="img-border scissors">
+            <img onClick={this.playButtonHandler} className="btn" value={"scissors"} src={scissorsImg} alt="scissors"></img>
+          </div>
         </div>
-        <div onClick={this.playButtonHandler} className="btn" value={"paper"}>
-          Paper
-        </div>
-        <div onClick={this.playButtonHandler} className="btn" value={"scissors"}>
-          Scissors
+        <div className="row-two">
+          <div className="img-border rock">
+            <img onClick={this.playButtonHandler} className="btn" value={"rock"} src={rockImg} alt="rock"></img>
+          </div>
         </div>
       </div>
     );

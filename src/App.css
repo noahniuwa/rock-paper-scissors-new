@@ -3,19 +3,82 @@
   text-align: center;
 }
 
+
 * {
   color: white;
   font-family: 'Barlow Semi Condensed', sans-serif;
   margin: 0;
   padding: 0;
 }
-.btn {
-  margin: 20px auto;
-  border: 1px solid black;
-  width: 200px;
-  height: 30px;
-  border-radius: 10px;
 
+.img-border{
+  display: inline-block;
+  padding: 15px;
+  border-radius: 100%;
+  margin: 10px 30px;
+}
+
+.rock{
+  background-image: linear-gradient(hsl(349, 71%, 52%), hsl(349, 70%, 56%));
+} 
+
+.rock::after {
+  width: 200px;
+  border-bottom: 10px solid rgb(21,37,61);
+  transform:
+      translateY(0px)
+      translateX(-200px)
+      rotate(60deg); 
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+.scissors::after {
+  width: 200px;
+  border-bottom: 10px solid rgb(21,37,61);
+  transform:
+      translateY(130px)
+      translateX(-200px)
+      rotate(120deg); 
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+.paper::after {
+  width: 200px;
+  border-bottom: 10px solid rgb(21,37,61);
+  transform:
+      translateY(50px)
+      translateX(0px)
+      rotate(0deg); 
+  position: absolute;
+  content: "";
+  z-index: -1;
+}
+
+.paper {
+  background-image: linear-gradient(hsl(230, 89%, 62%), hsl(230, 89%, 65%));
+}
+
+
+.scissors {
+  background-image: linear-gradient(hsl(39, 89%, 49%), hsl(40, 84%, 53%));
+}
+
+.btn {
+  display: inline-block;
+  width: 60px;
+  height: 60px;
+  background-color: #E6E6E5;
+  padding: 35px;
+  border-radius: 100%;
+  box-shadow: inset 0px 10px  5px rgba(0,0,0,0.2);
+}
+
+.btn:hover {
+  cursor: pointer;
 }
 
 .stateInfo {
@@ -24,68 +87,63 @@
   margin: auto;
 }
 
-.btn:hover {
-  cursor: pointer;
-  background-color: lightgray;
-}
-
-.game-status {
-  padding-top: 30px;
-  width: 800px;
-  height: 200px;
-  color: greenyellow;
-  background-color: black;
-  margin: auto;
-  border-radius: 10px;
-}
-
 .score {
-  border: solid 3px rgba(248, 248, 248, .5);
+  border: solid 3px hsl(217, 16%, 45%);
   border-radius: 15px;
   padding: 25px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 700px;
-  margin: 30px auto;
+  max-width: 550px;
+  margin: 20px auto;
 }
 
 .score-panel {
   background-color: #f8f8f8;
-  width: 150px;
-  height: 125px;
+  width: 100px;
+  height: 80;
   border-radius: 15px;
+  padding: 0 10px;
 }
 
 .score-number {
   text-align: center;
-  color: #504D63;
-  font-size: 5rem;
+  color: hsl(229, 25%, 31%);
+  font-size: 4rem;
   transform: translateY(-10px);
+  padding-top: 5px;
+  line-height: 4rem;
   font-weight: 700;
 }
 
 .score-title {
   text-align: center;
-  padding-top: 10px;
-  color: #7485DF;
+  padding-top: 5px;
+  color: hsl(229, 64%, 46%);
   font-size: 1rem;
   letter-spacing: .15rem;
   font-weight: 700;
 }
 
 .logo {
-  width: 170px;
-  height: 105px;
+  width: 150px;
+  height: 92.5px;
 }
 body, html {
   width: 100%;
   height: 100%;
-  position: fixed;
 }
 
+
+
 body {
-  background-image: radial-gradient(at top, hsl(214, 47%, 23%) ,hsl(237, 49%, 15%));
+  background-image: radial-gradient(at top, hsl(214, 47%, 25%) , hsl(237, 49%, 15%));
   background-position: left top;
-  padding: 40px;
+  padding: 20px;
+  background-attachment: fixed;
+  
+}
+
+@media (max-width: 600px) {
+  
 }
