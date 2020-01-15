@@ -1,8 +1,31 @@
 .App {
+  display: block;
   margin: auto;
   text-align: center;
 }
 
+.reset-button {
+  width: 200px;
+  height: 40px;
+  display: inline-block;
+  margin: auto;
+  background-color: #E6E6E5;
+  border-radius: 15px;
+  color: black;
+  line-height: 40px;
+}
+
+.game-state-two-wrapper {
+  padding-top: 50px;
+  display: inline-block;
+}
+
+.game-state-two {
+  display: grid;
+  grid-template-columns: 250px 200px 250px;
+  grid-template-rows: 100px 300px;
+  margin: auto;
+}
 
 * {
   color: white;
@@ -145,5 +168,19 @@ body {
 }
 
 @media (max-width: 600px) {
-  
+  .score {
+    padding: 25px;
+    max-width: 300px;
+    margin-bottom: 40px;
+    margin-top: 20px
+  }
+
+  .btn {
+    width: 50px;
+    height: 50px;
+    padding: 25px;
+  }
+  .img-border{
+    padding: 10px;
+  }
 }
