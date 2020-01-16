@@ -15,6 +15,7 @@ class App extends React.Component {
       gameState: 1,
       playerChoice: null,
       computerChoice: null,
+      resultMessage: null,
     }
     this.gameOutcome = gameOutcome
   }
@@ -27,6 +28,15 @@ class App extends React.Component {
     score = this.state.score + score
     this.setState({statusMessage: outcome[1], playerChoice: playerChoice, computerChoice: computerChoice, score: score})
     this.setState({gameState: 2})
+    if (outcome[0] === "win"){
+      this.setState({resultMessage: "YOU WIN"})
+    }
+    if (outcome[0] === "tie"){
+      this.setState({resultMessage: "IT'S A TIE"})
+    }
+    if (outcome[0] === "lose"){
+      this.setState({resultMessage: "YOU LOSE"})
+    }
   }
 
   resetButtonHandler = () => {
@@ -47,7 +57,7 @@ class App extends React.Component {
         <div className="App">
           <Score score={this.state.score} />
           <div className="game-state-two-wrapper">
-            <GameStateTwo resetButtonHandler={this.resetButtonHandler} playerChoice={this.state.playerChoice} computerChoice={this.state.computerChoice} />
+            <GameStateTwo resetButtonHandler={this.resetButtonHandler} playerChoice={this.state.playerChoice} computerChoice={this.state.computerChoice} resultMessage={this.state.resultMessage} />
           </div>
         </div>
       );

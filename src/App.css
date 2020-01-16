@@ -13,19 +13,59 @@
   border-radius: 15px;
   color: black;
   line-height: 40px;
+  cursor: pointer;
 }
 
 .game-state-two-wrapper {
-  padding-top: 50px;
   display: inline-block;
 }
 
 .game-state-two {
   display: grid;
-  grid-template-columns: 250px 200px 250px;
-  grid-template-rows: 100px 300px;
+  align-items: center;
+  justify-items: center;
+  grid-template-columns: 300px 200px 300px;
+  grid-template-rows: 150px 200px;
   margin: auto;
 }
+
+.house-pick, .player-pick {
+  font-size: 1.8rem;
+  letter-spacing: .5px;
+  font-weight: 600;
+}
+
+.game-result {
+  display: inline-block;
+  height: 100px;
+  line-height: 100px;
+  font-size: 3rem;
+  letter-spacing: .5px;
+  font-weight: 600;
+}
+
+.game-state-two .rock::after {
+  width: 0px;
+  border-bottom: 0px solid white;
+}
+.game-state-two .paper::after {
+  width: 0px;
+  border-bottom: 0px solid white;
+}
+.game-state-two .scissors::after {
+  width: 0px;
+  border-bottom: 0px solid white;
+}
+
+.game-state-two .btn {
+  width: 100px;
+  height: 100px;
+}
+
+.game-state-two .btn:hover {
+  cursor: auto;
+}
+
 
 * {
   color: white;
@@ -49,8 +89,8 @@
   width: 200px;
   border-bottom: 10px solid rgb(21,37,61);
   transform:
-      translateY(0px)
-      translateX(-200px)
+      translateY(-150px)
+      translateX(-160px)
       rotate(60deg); 
   position: absolute;
   content: "";
@@ -61,8 +101,8 @@
   width: 200px;
   border-bottom: 10px solid rgb(21,37,61);
   transform:
-      translateY(130px)
-      translateX(-200px)
+      translateY(30px)
+      translateX(-155px)
       rotate(120deg); 
   position: absolute;
   content: "";
@@ -73,7 +113,7 @@
   width: 200px;
   border-bottom: 10px solid rgb(21,37,61);
   transform:
-      translateY(50px)
+      translateY(-65px)
       translateX(0px)
       rotate(0deg); 
   position: absolute;
@@ -94,10 +134,14 @@
   display: inline-block;
   width: 60px;
   height: 60px;
-  background-color: #E6E6E5;
   padding: 35px;
+  
+}
+
+.btn-wrapper {
   border-radius: 100%;
   box-shadow: inset 0px 10px  5px rgba(0,0,0,0.2);
+  background-color: #E6E6E5;
 }
 
 .btn:hover {
@@ -183,4 +227,35 @@ body {
   .img-border{
     padding: 10px;
   }
+  .game-state-two {
+    grid-template-columns: 150px 80px 150px;
+    grid-template-rows: 80px 170px;
+
+  }
+
+  .game-state-two .btn {
+    width: 30px;
+    height: 30px;
+  }
+  .game-result {
+    height: 25px;
+    line-height: 25px;
+    font-size: 1.7rem;
+    align-self: start;
+    transform: translateY(-30px);
+  }
+
+  .reset-button {
+    width: 80px;
+    height: 30px;
+    border-radius: 8px;
+    line-height: 30px;
+    font-size: .7rem;
+    align-self: end;
+  }
+
+  .house-pick, .player-pick {
+    font-size: 1.3rem;
+  }
+
 }
